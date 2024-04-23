@@ -1,0 +1,44 @@
+STEP-1
+-----------
+
+1) Create a file docker-compose.yaml with Required config(Ref: https://github.com/SeleniumHQ/docker-selenium)
+
+2) Run docker-compose.yaml 
+
+		docker-compose up
+
+3) To check hub & nodes running state:
+   
+		http://localhost:4444/grid/console
+
+4) To stop the grid and cleanup the created containers, run  
+
+		ctrl+c   ==> To Stop the current grid
+		docker-compose down   ==> To remove the containers
+
+***************************************************************
+
+Start/Stop Docker grid using bat Files & Java program
+
+******************************************
+
+1) Copy the file docker-compose.yaml in the Current Project 
+
+2) Create start_dockergrid.bat file in the same Project which contains
+	
+	cd C:\Users\admin\eclipse-workspace\sdet
+	docker-compose up
+	
+3) Create stop_dockergrid.bat file in the same Project which contains
+	
+	cd C:\Users\admin\eclipse-workspace\sdet
+	docker-compose down
+	
+4) Create TestNG/Java class to run both the batch files.
+
+5) Run all the tests using TestNG xml together.
+
+6 Run all the tests using pom.xml together.
+
+
+

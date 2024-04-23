@@ -1,0 +1,48 @@
+What to prepare for Automation tester/SDET?
+----------------
+1) Manual testing  - Types, STLC/Agile, Bug life cycle, test cases, test data
+2) Agile - Jira
+3) SQL
+------
+4) Java programming
+5) WebDriver
+6) TestNG
+7) Frameworks - Hybrid framework
+8) Maven, git, github, jenkins
+9) Cucumber framework
+10) Unix/Linux commands
+
+upgrade skills
+---------------
+1) API Testing - Postman, RestAssured
+2) Mobile app testing - Appium
+3) Performance  testing- Jmeter
+
+Primary skills  7-8 rating(master)
+Secondary skills   <5  rating(knowledge)
+
+How to prepare for interview
+--------------------------
+1) Learn
+2) Practice- examples, coding examples, project
+3) Interview Questions (5-10)
+4) Prepare resume and upload in 2 portal.
+	Linked-in  profile
+     	Linked- groups
+	spend time 15 mins on social networks
+5) Keep attending intervies
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

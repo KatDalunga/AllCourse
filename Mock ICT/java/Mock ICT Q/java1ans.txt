@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class UserInterface {
+	
+	public static MovieTickets extractDetails(String movieDetails){
+		//Fill the code here
+		String[] tokens=movieDetails.split(":");
+		MovieTickets mt= new MovieTickets(tokens[0],tokens[1],Integer.parseInt(tokens[2]),tokens[3],tokens[4],tokens[5]);
+		return mt;
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//Fill the code here
+		System.out.println("Enter the details");
+		String movieDetails = sc.nextLine();
+		MovieTickets mt=extractDetails(movieDetails);
+		System.out.println("Ticket Details");
+		System.out.println("Movie Name: " + mt.getMovieName());
+		System.out.println("Screen Number: " + mt.getScreenNumber());
+		System.out.println("Number of tickets: " + mt.getNoOfTickets());
+		System.out.println("Show Timing: " + mt.getTime());
+		System.out.println("Ticket Cost: " + mt.calculatePrice());
+		System.out.println("TicketId: " + mt.generateTicketId());
+		
+		System.out.println("Thank you! Your payment via " + mt.getModeOfPayment() + ", Your movie trickets are confirmed.");
+		
+		sc.close();
+		
+		
+
+	}
+
+}

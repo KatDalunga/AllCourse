@@ -1,0 +1,510 @@
+#AirJio
+public class AirJioSystem {
+    public static void main(String[] args) {
+        Subscriber subscriber1 = new Subscriber("John Doe", "9876543210", 100);
+        Subscriber subscriber2 = new Subscriber("Jane Doe", "9876543211", 50);
+ 
+        // Recharge balance for subscribers
+        subscriber1.rechargeBalance(200);
+        subscriber2.rechargeBalance(100);
+ 
+        // Make calls for subscribers
+        subscriber1.makeCall(10); // John Doe makes a 10-minute call
+        subscriber2.makeCall(20); // Jane Doe makes a 20-minute call
+        subscriber1.makeCall(30); // John Doe makes a 30-minute call
+    }
+}
+public class Subscriber {
+    private String name;
+    private String phoneNumber;
+    private double balance;
+ 
+    public Subscriber(String name, String phoneNumber, double initialBalance) {
+this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.balance = initialBalance;
+    }
+ 
+    public String getName() {
+        return name;
+    }
+ 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+ 
+    public double getBalance() {
+        return balance;
+    }
+ 
+    public void rechargeBalance(double amount) {
+        balance += amount;
+        System.out.println(name + ", your balance is recharged with Rs." + amount + ". Your current balance is Rs." + balance);
+    }
+ 
+    public void makeCall(double callDuration) {
+        double callCost = callDuration * 0.5; // Assuming call cost is Rs. 0.50 per minute
+        if (balance >= callCost) {
+            balance -= callCost;
+            System.out.println(name + ", you have made a call for " + callDuration + " minutes. Your balance is Rs." + balance + " now.");
+        } else {
+            System.out.println("Insufficient balance to make the call.");
+        }
+    }
+}
+
+-------------------------------------
+#AirJio
+ 
+public class BroadbandRecharge {
+
+	private String customerName;
+
+	private String mobileNumber;
+
+	private double planCharge;
+
+	private String paymentMode;
+
+	public String getCustomerName() {
+
+		return customerName;
+
+	}
+
+	public void setCustomerName(String customerName) {
+
+		this.customerName = customerName;
+
+	}
+
+	public String getMobileNumber() {
+
+		return mobileNumber;
+
+	}
+
+	public void setMobileNumber(String mobileNumber) {
+
+		this.mobileNumber = mobileNumber;
+
+	}
+
+	public double getPlanCharge() {
+
+		return planCharge;
+
+	}
+
+	public void setPlanCharge(double planCharge) {
+
+		this.planCharge = planCharge;
+
+	}
+
+	public String getPaymentMode() {
+
+		return paymentMode;
+
+	}
+
+	public void setPaymentMode(String paymentMode) {
+
+		this.paymentMode = paymentMode;
+
+	}
+
+	public BroadbandRecharge(String customerName,String mobileNumber,double planCharge,String paymentMode) {
+
+		this.customerName = customerName;
+
+		this.mobileNumber = mobileNumber;
+
+		this.planCharge = planCharge;
+
+		this.paymentMode = paymentMode;
+
+	}
+
+	public double calculateBillAmount() {
+
+		if(planCharge<1) {
+
+			return 0;
+
+		}
+
+		String type = paymentMode.toLowerCase();
+
+		switch(type) {
+
+		case"upi":{
+
+			return planCharge+(planCharge*0.05);
+
+		}
+
+		case"card":{
+
+			return planCharge+(planCharge*0.03);
+
+		}
+
+		case"netbanking":{
+
+			return planCharge+(planCharge*0.02);
+
+		}
+
+		case"ajwallet":{
+
+			return planCharge;
+
+		}
+
+		default:{
+
+			return 0;
+
+		}
+
+		}
+
+	}
+
+}
+
+ 
+import java.util.Scanner;
+ 
+public class Airjio {
+
+	public static BroadbandRecharge extractDeatails(String rechargeDetails) {
+
+		String[]arr = rechargeDetails.split(":");
+
+		String c = arr[0].trim();
+
+		String m = arr[1].trim();
+
+		double pc = Double.parseDouble(arr[2].trim());
+
+		String p = arr[3].trim();
+
+		//BroadbandRecharge m = new BroadbandRecharge(c,m,pc,p);
+
+		return new BroadbandRecharge(c,m,pc,p);
+
+	}
+ 
+	public static void main(String[] args) {
+
+		// TODO Auto-generated method stub
+
+		Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the details");
+
+        String rechargeDetails = scanner.nextLine();
+
+        BroadbandRecharge broadbandRecharge = extractDeatails(rechargeDetails);
+
+        if (broadbandRecharge == null) {
+
+            System.out.println("Invalid broadband recharge details");
+
+        } else {
+
+            double billAmount = broadbandRecharge.calculateBillAmount();
+
+            if (billAmount == 0) {
+
+                System.out.println("Invalid broadband recharge details");
+
+            } else {
+
+                System.out.println("Invoice");
+
+                System.out.println("Customer Name: " + broadbandRecharge.getCustomerName());
+
+                System.out.println("Mobile Number: " + broadbandRecharge.getMobileNumber());
+
+                System.out.println("Plan: " + broadbandRecharge.getPlanCharge());
+
+                System.out.println("Payment Mode: " + broadbandRecharge.getPaymentMode());
+
+                System.out.println("Bill Amount: " + billAmount);
+
+            }
+
+        }
+ 
+	}
+ 
+}
+
+----------------------------
+#Farm Fresh
+
+import java.util.*;
+
+public class VegetableMain {
+
+    // Attribute to store the vegetable map
+    private Map<String, String> vegetableMap;
+
+    // Getter and setter methods for the attribute
+    public Map<String, String> getVegetableMap() {
+        return vegetableMap;
+    }
+
+    public void setVegetableMap(Map<String, String> vegetableMap) {
+        this.vegetableMap = vegetableMap;
+    }
+
+    // Constructor to initialize the vegetable map
+    public VegetableMain() {
+        vegetableMap = new HashMap<>();
+    }
+
+    // Method to find the count of vegetables based on the given vegetable type
+    public int findTheCountOfVegetablesBasedOnTheVegetableType(String vegetableType) {
+    	int count =0;
+
+    			for(String type:vegetableMap.values()) {
+
+    				if(type.equalsIgnoreCase(vegetableType)) {
+
+    					count++;
+
+    				}
+
+    			}
+    			if(count==0) {
+    				return -1;
+    			}
+
+    			return count;
+    }
+
+    // Method to find the list of vegetables based on the given vegetable type
+    public List<String> findVegetablesBasedOnTheVegetableType(String vegetableType) {
+    	List<String> list = new ArrayList<>();
+
+    			for(Map.Entry<String,String> m:vegetableMap.entrySet()) {
+
+    				if(m.getValue().equalsIgnoreCase(vegetableType)) {
+
+    					list.add(m.getKey());
+
+    				}
+
+    			}
+
+    			return list;
+    }
+
+    // Main method to test the program
+    public static void main(String[] args) {
+        // Create an object of VegetableMain class
+        VegetableMain vm = new VegetableMain();
+        // Create a scanner object to read the user input
+        Scanner sc = new Scanner(System.in);
+        // Prompt the user to enter the number of records to be added
+        System.out.println("Enter number of records to be added");
+        // Read the number of records
+        int n = sc.nextInt();
+        // Consume the newline
+        sc.nextLine();
+        // Prompt the user to enter the records in the format of vegetable name: vegetable type
+        System.out.println("Enter the records (Vegetable Name: Vegetable Type)");
+        // Loop for n times
+        for (int i = 0; i < n; i++) {
+            // Read the record
+            String record = sc.nextLine();
+            // Split the record by colon
+            String[] parts = record.split(":");
+            // Trim the leading and trailing spaces
+            String name = parts[0].trim();
+            String type = parts[1].trim();
+            // Put the name and type in the vegetable map
+            vm.getVegetableMap().put(name, type);
+        }
+        // Prompt the user to enter the vegetable type to be searched
+        System.out.println("Enter the Vegetable type to be searched");
+        // Read the vegetable type
+        String type = sc.nextLine();
+        // Call the method to find the count of vegetables based on the type
+        int count = vm.findTheCountOfVegetablesBasedOnTheVegetableType(type);
+        // If the count is -1, print no vegetables were found
+        if (count == -1) {
+            System.out.println("No Vegetables were found for " + type);
+        }
+        // Otherwise, print the count
+        else {
+            System.out.println("The count of vegetables based on the type " + type + " are " + count);
+        }
+        // Prompt the user to enter the vegetable type to get the list of vegetables
+        System.out.println("Enter the vegetable type to get the list of vegetables");
+        // Read the vegetable type
+        type = sc.nextLine();
+        // Call the method to find the list of vegetables based on the type
+        List<String> vegetables = vm.findVegetablesBasedOnTheVegetableType(type);
+        // If the list is empty, print no vegetables were found
+        if (vegetables.isEmpty()) {
+            System.out.println("No vegetables were found for the " + type);
+        }
+        // Otherwise, print the list
+        else {
+            System.out.println("Vegetables based on the " + type + " are");
+            for (String vegetable : vegetables) {
+                System.out.println(vegetable);
+            }
+        }
+        // Close the scanner
+        sc.close();
+    }
+}
+
+
+--------------------
+#fARM FRESH
+import java.util.*;
+ 
+class VegetableMain {
+    private Map<String, String> vegetableMap;
+ 
+    public VegetableMain() {
+        vegetableMap = new HashMap<>();
+    }
+ 
+    public void addVegetable(String vegetableName, String vegetableType) {
+        vegetableMap.put(vegetableName, vegetableType);
+    }
+ 
+    public int findTheCountOfVegetablesBasedOnTheVegetableType(String vegetableType) {
+        int count = 0;
+        for (String type : vegetableMap.values()) {
+            if (type.equalsIgnoreCase(vegetableType)) {
+                count++;
+            }
+        }
+        return count == 0 ? -1 : count;
+    }
+ 
+    public List<String> findVegetablesBasedOnTheVegetableType(String vegetableType) {
+        List<String> vegetables = new ArrayList<>();
+        for (Map.Entry<String, String> entry : vegetableMap.entrySet()) {
+            if (entry.getValue().equalsIgnoreCase(vegetableType)) {
+                vegetables.add(entry.getKey());
+            }
+        }
+        return vegetables;
+    }
+ 
+    public Map<String, String> getVegetableMap() {
+        return vegetableMap;
+    }
+ 
+    public void setVegetableMap(Map<String, String> vegetableMap) {
+        this.vegetableMap = vegetableMap;
+    }
+}
+ 
+public class farmFresh {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        VegetableMain vegetableMain = new VegetableMain();
+ 
+        System.out.println("Enter number of records to be added");
+        int n = scanner.nextInt();
+        //scanner.nextLine(); // Consume newline, to be removed if unnecessary
+        System.out.println("Enter the records (Vegetable Name: Vegetable Type)");
+        for (int i = 0; i < n; i++) {
+            String record = scanner.nextLine();
+            String[] val = record.split(":");
+            vegetableMain.addVegetable(val[0].trim(), val[1].trim());
+        }
+ 
+        System.out.println("Enter the Vegetable type to be searched");
+        String searchType = scanner.nextLine().trim();
+ 
+        int count = vegetableMain.findTheCountOfVegetablesBasedOnTheVegetableType(searchType);
+        if (count != -1) {
+            System.out.println("The count of vegetables based on the type " + searchType + " are " + count);
+        } else {
+            System.out.println("No vegetables were found for " + searchType);
+        }
+ 
+        System.out.println("Enter the vegetable type to get the list of vegetables");
+        String searchTypeList = scanner.nextLine().trim();
+ 
+        List<String> vegetables = vegetableMain.findVegetablesBasedOnTheVegetableType(searchTypeList);
+        if (!vegetables.isEmpty()) {
+            System.out.println("Vegetables based on the " + searchTypeList + " are");
+            for (String vegetable : vegetables) {
+                System.out.println(vegetable);
+            }
+        } else {
+            System.out.println("No vegetables were found for the " + searchTypeList);
+        }
+    }
+}
+---------------
+SQl--MAX DEPOSIT AMUOUNT
+SELECT c.CUSTOMER_ID, c.CUSTOMER_NAME, a.ACCOUNT_NO, a.ACCOUNT_TYPE, a.INITIAL_DEPOSIT, a.INTEREST
+FROM account_info a
+JOIN customer_personal_info c ON a.CUSTOMER_ID = c.CUSTOMER_ID
+WHERE a.INITIAL_DEPOSIT = (SELECT MAX(INITIAL_DEPOSIT) FROM account_info)
+ORDER BY c.CUSTOMER_ID ASC;
+
+Sql-BOOKING FLIGHT
+SELECT p.Pass_Name, f.Flight_name
+FROM Passengers p
+JOIN Booking_Details bd ON p.Pass_id = bd.Pass_id
+JOIN Booking b ON bd.Booking_id = b.Booking_id
+JOIN Flight_details f ON b.Flight_id = f.Flight_id
+WHERE b.Booking_date = f.Flight_date
+ORDER BY p.Pass_Name DESC;
+
+---------------
+Count  Words
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // Create a scanner object to read the input
+        Scanner sc = new Scanner(System.in);
+        // Read the sentence and the word
+        String sentence = sc.nextLine();
+        String word = sc.nextLine();
+        // Call the countWords method from UserMainCode class
+        int count = UserMainCode.countWords(sentence, word);
+        // Print the output
+        System.out.println(count);
+        // Close the scanner
+        sc.close();
+    }
+}
+
+class UserMainCode {
+    // A static method to count the number of occurrences of a word in a sentence
+    public static int countWords(String sentence, String word) {
+        // Split the sentence by spaces
+        String[] words = sentence.split(" ");
+        // Initialize a variable to store the count
+        int count = 0;
+        // Loop through the words array
+        for (String w : words) {
+            // If the word matches the given word, increment the count
+            if (w.equals(word)) {
+                count++;
+            }
+        }
+        // Return the count
+        return count;
+    }
+}
+---------------------------------------------------------

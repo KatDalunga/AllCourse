@@ -1,0 +1,12 @@
+Hi team,
+As discussed implement the below points in Hackathon Project.
+Maven
+POM with page factory
+Cucumber – feature file, step definition and test runner
+TestNG – grouping, rerun failed test cases, multiple XML or Multiple Suite for Smoke and Regression suite
+Rerun failed testcases with Listeners upto max 2 times
+ 
+Data driven Framework – Excel, Property file and [XML or JSON] 3 file types is mandatory
+Extent report with screenshot and logs
+Jenkins with GIT
+Selenium Grid

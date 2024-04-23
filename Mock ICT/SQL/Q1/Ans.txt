@@ -1,0 +1,7 @@
+SELECT c.car_name, SUM(r.fare_amount) AS Total_Fare
+FROM cars c
+JOIN rentals r ON c.car_id = r.car_id
+WHERE MONTH(r.pickup_date) = MONTH(r.return_date)
+GROUP BY c.car_name
+HAVING Total_Fare < 20000
+ORDER BY Total_Fare ASC;

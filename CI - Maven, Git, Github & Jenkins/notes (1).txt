@@ -1,0 +1,22 @@
+Jenkins
+-------
+Download location: https://www.jenkins.io/download/
+
+once jenkins is installed.....
+
+1) install additional plugins ( Maven, git, github...)
+
+		Maven Integration
+		Pipeline maven integration
+		 all git related plugins...
+
+2) configure paths
+	java/jdk
+        maven
+	git
+
+---------------------
+Github project url: https://github.com/pavanoltraining/opencart.git
+
+
+

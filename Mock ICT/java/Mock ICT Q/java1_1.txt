@@ -1,0 +1,127 @@
+public class MovieTickets {
+			
+	private String movieName;
+	private String screenNumber;
+	private int noOfTickets;
+	private String mobileNumber;
+	private String time;
+	private String modeOfPayment;
+	
+	
+	public String getMovieName() {
+		return movieName;
+	}
+
+	public void setMovieName(String movieName) {
+		this.movieName = movieName;
+	}
+
+	public String getScreenNumber() {
+		return screenNumber;
+	}
+
+	public void setScreenNumber(String screenNumber) {
+		this.screenNumber = screenNumber;
+	}
+
+	public int getNoOfTickets() {
+		return noOfTickets;
+	}
+
+	public void setNoOfTickets(int noOfTickets) {
+		this.noOfTickets = noOfTickets;
+	}
+
+	public String getMobileNumber() {
+		return mobileNumber;
+	}
+
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+	public String getModeOfPayment() {
+		return modeOfPayment;
+	}
+
+	public void setModeOfPayment(String modeOfPayment) {
+		this.modeOfPayment = modeOfPayment;
+	}
+
+	public MovieTickets(String movieName, String screenNumber, int noOfTickets, String mobileNumber, String time, String modeOfPayment) {
+		super();
+		this.movieName = movieName;
+		this.screenNumber = screenNumber;
+		this.noOfTickets = noOfTickets;
+		this.mobileNumber = mobileNumber;
+		this.time = time;
+		this.modeOfPayment = modeOfPayment;
+	}
+	
+	public MovieTickets() {
+		super();
+		
+	}
+		
+	public double calculatePrice(){
+		//Fill the code here
+		double ticketPrice=0;
+		double convenienceCharge=0;
+		double totalPrice=0;
+		
+		switch(screenNumber){
+		    case "S1":
+		        ticketPrice=280;
+		        convenienceCharge=35;
+		        break;
+		    case "S2":
+		        ticketPrice=250;
+		        convenienceCharge=35;
+		        break;
+		    case "S3":
+		        ticketPrice=520;
+		        convenienceCharge=35;
+		        break;
+		    case "S4":
+		        ticketPrice=400;
+		        convenienceCharge=35;
+		        break;
+		    case "S5":
+		        ticketPrice=180;
+		        convenienceCharge=0;
+		        break;
+		    default:
+		        return 0;
+		        
+		}
+		if(noOfTickets>0){
+		    totalPrice=noOfTickets*ticketPrice +convenienceCharge;
+		}else{
+		    return 0;
+		}
+		return totalPrice;
+			
+			
+	}
+	
+	public String generateTicketId(){
+	    if(noOfTickets>0 && (screenNumber=="S1" || screenNumber=="S2" || screenNumber=="S3" || screenNumber=="S4" || screenNumber=="S5")){
+	        String con= movieName.replaceAll("[aeiouAEIOU]","");
+	        return con.substring(0,2)+screenNumber+"N"+noOfTickets;
+	    }
+		//Fill the code here
+		
+			
+		return "Invalid movie details";
+	}
+
+
+}

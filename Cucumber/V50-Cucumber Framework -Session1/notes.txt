@@ -1,0 +1,69 @@
+Cucumber
+--------------
+TDD - Test Driven Development
+	Ex: TestNG, Junit
+
+BDD - Behavioral Driven Development
+	Ex: Cucumber, JBehave, serinty etc...
+
+team
+----
+stake holders/customer (non-tech)
+product manager (non-tech)
+project manager - (non-tech)
+tester - tech
+developer - tech
+scrum master (non-tech)
+
+3 Files
+-------
+1) Feature file
+2) step definitions file
+3) test runner file
+
+Feature files contains scenarios..
+
+Gherkin - language contains keywords..
+	Scanario	
+	Given
+	When
+	Then
+	And
+
+
+Pre-condition  - Given
+actions   - When
+validation -- Then
+
+Login.feature
+----------------
+Feature : User login
+	Scenario: Succesful login
+		Given the user opens application
+		And  the user navigate to login page
+		When the user entered valid user name and valid password
+		And the user clicked on submit button.
+		Then the user should see My account page.
+
+
+Step definition file contains methos which are represent to steps in feature file
+
+testRunner class  ---> feature file, steps, report etc...
+
+
+Cucumber Junit
+
+** we need to install cucumber plugin in eclipse
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+1. Follow a Simple Framework or Page Object Model without Page Factory
+2. Implement TestNG.xml or "main method" to run the project
+3. Multibrowser execution- Should have handled at least two browsers (Firefox\Chrome\Edge). 
+4. Desired capabilities\Driver setup
+5. Data driven concept - Input data should be imported from an external excel sheet (Ex: using Apache PoI libraries in case of Java)
+ or Properties file or flat file 
+**Scripts should NOT have any hard coded data, unless it was mentioned in the Project description and steps.
+6. Handled exceptions with exception handling & error messages 
+7. Check code is syntactically correct and executes end to end successfully without any issue
+8. Code for taking screenshot
+9. Industry Coding standard should be followed, which includes package,Project, Claass,method, variable, object naming convention, script headers & comments
+10. All scripts / business components/Test results should be available in their respective folders
+11. Functions should have header, comments wherever applicable to improve readability and maintainability
+12. Should handle page synchronization issues using industry standard best practices. 
+UseTimeout instead of Thread.sleep statement wherever applicable.
+13. Validation messages and mandatory test-steps should be logged onto the Console
+14. Comment out/ remove unnecessary codes before submission
+15. AssociateID_Projname should be the Zip file name. Upload only Zip File [.rar file is not allowed].
+ Upload the file in 2 places – Tekstac platform and in the Share Path link.
+
+
+ 

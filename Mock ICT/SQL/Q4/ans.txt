@@ -1,0 +1,4 @@
+SELECT customer_id, customer_name, address, CONCAT(SUBSTR(customer_id, 1, 3), SUBSTR(email_id, 1, 3)) AS pass_code
+FROM customers
+WHERE email_id LIKE '%gmail%'
+ORDER BY customer_id DESC;

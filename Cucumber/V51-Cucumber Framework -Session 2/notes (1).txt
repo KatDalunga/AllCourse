@@ -1,0 +1,47 @@
+Cucumber framework
+---------------------
+1) Create Maven project-->Update pom.xml 
+2) Folder structure
+3) Page Object classes, Hooks & Base Class
+4) Login feature file
+5) Login steps
+6) Test runner - options
+7) Generate logs
+
+8) cucumber reports
+		plugin      "pretty", "html:reports/myreport.html",
+
+9) extent reports
+ Ref link: https://github.com/grasshopper7/extentreports-cucumber7-adapter
+
+		-> add dependency in pom.xml
+		-> extent.properties     keep in src/test/resources
+	
+10) tagging
+
+--------------------------------------------------------------
+
+
+
+
+
+Hooks
+-------
+@Before
+@After
+@BeforeStep
+@AfterStep
+
+
+Sc1  - sanity
+Sc2 - regression
+Sc3 - sanity , regression
+
+tags="@sanity"    ------> sc1, sc3
+tags="@sanity and not @regression"   ---->Sc1
+tags="@sanity or @regression"  ---->  all
+tags="@sanity and @regression"    ----> sc3
+
+
+
+
